@@ -2,6 +2,11 @@
 name = "constrained"
 version = "0.1.0"
 authors = ["Dylan Ede <dylanede@googlemail.com>"]
+description = "A collection of algorithms for constrained optimisation problems, written in Rust."
+repository = "https://github.com/dylanede/constrained"
+readme = "README.md"
+license = "MIT / Apache-2.0"
+keywords = ["optimization", "linear", "algebra", "program", "programming", "quadratic", "sparse"]
 
 [dependencies]
 sprs = "0.3.0"
