@@ -386,17 +386,7 @@ pub fn spsolqp<N: Float + Eps + Default + Debug + rand::Rand + Debug>(q: CsMatVi
     println!("A (local) optimal solution has been found in {} iterations.", iter);
     Ok((x, ob))
 }
-/*
-#[inline]
-fn id(s: &'static str) -> usize {
-    use std::mem::transmute;
-    unsafe{transmute(s.as_ptr())}
-}
 
-macro_rules! id {
-    ($id:ident) => {$crate::id(stringify!(@ $id @))}
-}
-*/
 #[test]
 fn it_works() {
     let q = CsMat::new_owned(CompressedStorage::CSR, 5, 5,
@@ -413,7 +403,7 @@ fn it_works() {
                                   -1.0, 2.0,      1.0,
                                    2.0, 1.0,           1.0]).unwrap();
     let b = CsVec::new_owned(3, vec![0, 1, 2], vec![2.0, 2.0, 3.0]).unwrap();
-    let target_error = 1E-6;
+    let target_error = 1E-5;
     let (x, ob) = spsolqp::<f64>(
         q.borrowed(), c.borrowed(),
         a.borrowed(), b.borrowed(),
@@ -425,5 +415,4 @@ fn it_works() {
     println!("true result: {:#?}", answer);
     println!("error: {:?}", error);
     assert!(error <= target_error);
-    panic!()
 }
