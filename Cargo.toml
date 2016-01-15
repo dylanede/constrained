@@ -1,0 +1,9 @@
+[package]
+name = "constrained"
+version = "0.1.0"
+authors = ["Dylan Ede <dylanede@googlemail.com>"]
+
+[dependencies]
+sprs = "0.3.0"
+num = "0.1.27"
+rand = "0.3"
